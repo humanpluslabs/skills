@@ -1,0 +1,24 @@
+{
+  "version": "0.2",
+  "language": "en,en-GB",
+  "locale": "en-GB,en-US",
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".mastra",
+    ".claude",
+    "pnpm-lock.yaml",
+    ".gitignore",
+    "skills-lock.json",
+    "pnpm-workspace.yaml",
+    "docs",
+    ".devcontainer",
+    "docker-compose.yaml",
+    "audit-ci.json",
+    ".agents",
+    ".pi",
+    "**/tsconfig.tsbuildinfo"
+  ],
+  "dictionaries": ["typescript", "node", "npm", "html", "css"],
+  "words": []
+}

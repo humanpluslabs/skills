@@ -1,0 +1,14 @@
+catalogMode: strict
+
+cleanupUnusedCatalogs: true
+
+linkWorkspacePackages: true
+
+minimumReleaseAge: 1440
+
+onlyBuiltDependencies:
+  - lefthook
+
+packages:
+  - "apps/*"
+  - "packages/*"
