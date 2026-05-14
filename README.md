@@ -1,123 +1,70 @@
 # Agent Skills
 
-A collection of agent skills that enhance your development workflow.
+A collection of agent skills that enhance the development workflow.
 
-## Development
+## In-House
 
-Skills for day-to-day development.
-
-- **commit** — Create conventional commit messages for staged changes. Supports optional context to guide the commit type and description.
 
   ```
-  npx skills@latest add humanpluslabsoss/skills --skill commit
+  pnpm dlx skills@latest add humanpluslabsoss/skills --agent claude-code pi
   ```
 
-- **explain** — Read-only mode for exploring and understanding your codebase without making changes. Use when you want to investigate code, check status, or learn about a project.
 
-  ```
-  npx skills@latest add humanpluslabsoss/skills --skill explain
-  ```
-
-- **docs** — Fetch documentation from `llms.txt` endpoints for supported libraries (Mastra, Drizzle, Hono, Zod, and more). Pass a library name and optional question to get answers grounded in the latest docs.
-
-  ```
-  npx skills@latest add humanpluslabsoss/skills --skill docs
-  ```
-
-## 3rd Party Skills
+## 3rd Party
 
 Skills from other authors that I find useful.
 
-### Planning & Design
+### Matt Pocock
 
-- **write-a-prd** — Create a PRD through an interactive interview, codebase exploration, and module design.
-
-  ```
-  npx skills@latest add https://github.com/mattpocock/skills --skill write-a-prd
-  ```
-
-- **prd-to-plan** — Turn a PRD into a multi-phase implementation plan using tracer-bullet vertical slices.
+Variety of skills to aid in the agentic development process
 
   ```
-  npx skills@latest add https://github.com/mattpocock/skills --skill prd-to-plan
+  pnpm dlx skills@latest add https://github.com/mattpocock/skills --agent claude-code pi
   ```
 
-- **prd-to-issues** — Break a PRD into independently-grabbable GitHub issues using vertical slices.
+### Drizzle
 
   ```
-  npx skills@latest add https://github.com/mattpocock/skills --skill prd-to-issues
+  pnpm dlx skills@latest add https://github.com/bobmatnyc/claude-mpm-skills --agent claude-code pi
   ```
 
-- **grill-me** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved.
+### Mastra
 
   ```
-  npx skills@latest add https://github.com/mattpocock/skills --skill grill-me
+  pnpm dlx skills@latest add https://github.com/mastra-ai/skills --agent claude-code pi
   ```
 
-- **improve-codebase-architecture** — Explore a codebase for architectural improvement opportunities, focusing on deepening shallow modules and improving testability.
+### openrouter-typescript-sdk
 
   ```
-  npx skills@latest add https://github.com/mattpocock/skills --skill improve-codebase-architecture
+  pnpm dlx skills@latest add https://github.com/openrouterteam/agent-skills --agent claude-code pi
   ```
 
-- **ubiquitous-language** — Extract and formalize domain terminology from the current conversation into a consistent glossary, saved to `UBIQUITOUS_LANGUAGE.md`. Identifies ambiguities, resolves synonyms, and proposes canonical terms with opinionated choices.
+### Composio
 
   ```
-  npx skills@latest add https://github.com/mattpocock/skills --skill ubiquitous-language
+  pnpm dlx skills@latest add composiohq/skills --agent claude-code pi
   ```
 
-### Development
-
-- **tdd** — Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
+### Nextjs
 
   ```
-  npx skills@latest add https://github.com/mattpocock/skills --skill tdd
+  pnpm dlx skills@latest add https://github.com/vercel-labs/vercel-plugin --agent claude-code pi
   ```
 
-- **drizzle-orm** — Skills for working with Drizzle ORM, a TypeScript ORM for SQL databases.
+### Clerk
 
   ```
-  npx skills@latest add https://github.com/bobmatnyc/claude-mpm-skills --skill drizzle-orm
+  pnpm dlx skills@latest add clerk/skills --agent claude-code pi
   ```
 
-- **mastra** — Skills for building AI agents with the Mastra framework.
-
+### Railway
   ```
-  npx skills@latest add https://github.com/mastra-ai/skills --skill mastra
-  ```
-
-- **openrouter-typescript-sdk** — Skills for working with the OpenRouter TypeScript SDK.
-
-  ```
-  npx skills@latest add https://github.com/openrouterteam/agent-skills --skill openrouter-typescript-sdk
+  pnpm dlx skills@latest add https://github.com/railwayapp/railway-skills --agent claude-code pi
   ```
 
-- **composio** — Skills for integrating 1000+ app toolkits (Gmail, GitHub, Slack, Notion, and more) into AI agents with authentication and tool execution.
+### Cmux
 
-  ```
-  npx skills@latest add composiohq/skills
-  ```
-
-- **nextjs** — Skills for building applications with the Next.js React framework.
-
-  ```
-  npx skills@latest add https://github.com/vercel-labs/vercel-plugin --skill nextjs
-  ```
-
-- **clerk** — Skills for adding authentication and user management (sign-in, sign-up, sessions, organizations) to your application.
-
-  ```
-  npx skills@latest add clerk/skills
-  ```
-
-### Deployment & Infrastructure
-
-- **use-railway** — Skills for deploying and managing applications on Railway.
-
-  ```
-  npx skills@latest add https://github.com/railwayapp/railway-skills --skill use-railway
-  ```
-
-## License
-
-MIT
+```
+pnpm dlx skills add https://github.com/manaflow-ai/cmux --agent claude-code pi
+```
