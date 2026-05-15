@@ -6,6 +6,8 @@ linkWorkspacePackages: true
 
 minimumReleaseAge: 1440
 
+saveExact: true
+
 allowBuilds:
   lefthook: true
 
