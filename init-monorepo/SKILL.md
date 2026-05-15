@@ -82,7 +82,7 @@ Write `assets/npmrc` to `.npmrc` at the repo root.
 
 ### 9. Create `pnpm-workspace.yaml` (initial slice)
 
-Write the contents of `assets/pnpm-workspace.yaml` to `pnpm-workspace.yaml`, but **delete the `packages:` and `onlyBuiltDependencies:` blocks for now** — they're added in Steps 20 and 12 respectively. The starting file should contain only `catalogMode`, `cleanupUnusedCatalogs`, `linkWorkspacePackages`, and `minimumReleaseAge`.
+Write the contents of `assets/pnpm-workspace.yaml` to `pnpm-workspace.yaml`, but **delete the `packages:` and `allowBuilds:` blocks for now** — they're added in Steps 20 and 12 respectively. The starting file should contain only `catalogMode`, `cleanupUnusedCatalogs`, `linkWorkspacePackages`, and `minimumReleaseAge`.
 
 ### 10. Add a minimal `README.md`
 
@@ -103,13 +103,15 @@ pnpm add -D @biomejs/biome@latest cspell@latest lefthook@latest sherif@latest tu
 
 ### 12. Approve lefthook's postinstall
 
-Append the `onlyBuiltDependencies:` block (from `assets/pnpm-workspace.yaml`, lines 9–10) to `pnpm-workspace.yaml`. Then:
+Append the `allowBuilds:` block (from `assets/pnpm-workspace.yaml`, lines 9–10) to `pnpm-workspace.yaml`. Then:
 
 ```sh
 pnpm install
 ```
 
 This re-runs install with lefthook's postinstall now allowlisted — it generates a default `lefthook.yml` (overwritten in Step 19) and installs git hooks. Do **not** use `pnpm approve-builds`; it's interactive and the `--all` flag scope-escalates.
+
+**pnpm version note**: `allowBuilds` is the pnpm 11+ form. On pnpm 10 the field was `onlyBuiltDependencies: ["lefthook"]` (array of names); pnpm 11 renamed it and changed the shape to an object keyed by package name with a boolean value. The skill emits the pnpm-11 form — if the host is on pnpm 10, substitute the old form by hand.
 
 ### 13. Add `biome.json`
 

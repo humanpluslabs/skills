@@ -6,8 +6,8 @@ linkWorkspacePackages: true
 
 minimumReleaseAge: 1440
 
-onlyBuiltDependencies:
-  - lefthook
+allowBuilds:
+  lefthook: true
 
 packages:
   - "apps/*"
