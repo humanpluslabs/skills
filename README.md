@@ -4,7 +4,7 @@ A collection of agent skills that enhance the development workflow.
 
 ## In-House
 
-```
+```bash
 pnpm dlx skills@latest add humanpluslabs/skills --agent claude-code pi
 ```
 
