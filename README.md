@@ -5,8 +5,40 @@ A collection of agent skills that enhance the development workflow.
 ## In-House
 
 ```bash
-pnpm dlx skills@latest add humanpluslabs/skills --agent claude-code pi
+pnpx skills@latest add humanpluslabs/skills --agent claude-code
 ```
+
+### Planning → implementation pipeline
+
+Four skills chain a design conversation all the way to committed code. Paired
+with `/grill-me` (see [Matt Pocock](#matt-pocock) below), the flow is:
+
+```
+/grill-me                         design + decisions (the interview)
+      ↓
+/create-plans-from-conversation   capture + split into self-contained plans
+      ↓  (one plan at a time)
+/create-prd-from-plan             plan → prd.md + conventions.md
+      ↓  (loop until milestones done)
+/implement-prd                    next milestone → code, one per session
+```
+
+| Skill                            | What it does                                                                                                                                                                                      |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `create-plans-from-conversation` | Turns the design decisions in a conversation into one or more self-contained plan files under `docs/plans/`, each shaped to feed `/create-prd-from-plan`. Produces plans only — no PRDs, no code. |
+| `create-prd-from-plan`           | Turns a plan into an agent-executable PRD (`prd.md`) plus a per-PRD `conventions.md`, breaking work into self-contained milestones a fresh session can implement. Documents only.                 |
+| `implement-prd`                  | Implements the next incomplete milestone from a PRD — one milestone per session, commit when green, no auto-push.                                                                                 |
+
+### Utilities
+
+| Skill                 | What it does                                                                                                                                                                                              |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `commit`              | Creates a conventional commit message for staged changes.                                                                                                                                                 |
+| `create-asana-ticket` | Creates well-formed Asana tickets using a vertical-slice, outcome-focused template and a confirmation-first workflow.                                                                                     |
+| `explain`             | Read-only mode: answers questions about the project without changing anything.                                                                                                                            |
+| `init-monorepo`       | Bootstraps a fresh TypeScript pnpm monorepo with the house defaults (Biome, cspell, lefthook, Turbo, CI, and more).                                                                                       |
+| `pr-review-comments`  | Works through a pasted CodeRabbit review on the current PR: verifies each finding, gates on a verdict table, implements, syncs the knowledge base, then resolves/replies on threads and commits + pushes. |
+| `prime`               | Familiarises the agent with the project codebase at the start of a new conversation.                                                                                                                      |
 
 ## 3rd Party
 
