@@ -21,10 +21,16 @@ Please create a commit for the staged changes following these guidelines:
    - `git log --oneline -10` to understand the commit message style
    - `git rev-parse --abbrev-ref HEAD` to determine the current branch
    - `git symbolic-ref --short refs/remotes/origin/HEAD` to determine the default branch
-     (fall back to `main`/`master` if this is not set)
+     (fall back to `main`/`master` if this is not set). This returns a remote-qualified
+     ref such as `origin/main`; strip the `origin/` prefix before comparing it with the
+     current branch (e.g. `origin/main` → `main`).
 
-2. **Guard against committing on the default branch — do this before anything else:**
-   - If the current branch IS the default branch (e.g. `main`/`master`), STOP immediately.
+2. **Guard against committing on a detached HEAD or the default branch — do this before anything else:**
+   - If `git rev-parse --abbrev-ref HEAD` returned `HEAD`, you are on a detached HEAD. STOP
+     immediately — do NOT commit, push, or open a PR. Tell the user they are on a detached
+     HEAD and must create a branch first, e.g. `git switch -c <type>/<short-description>`.
+   - If the current branch IS the default branch (after stripping the `origin/` prefix, e.g.
+     `main`/`master`), STOP immediately.
    - Do NOT commit, push, or open a PR.
    - Print a message telling the user they are on the default branch and must fork into a
      new branch before continuing, and suggest a command, e.g.
