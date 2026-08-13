@@ -99,3 +99,11 @@ pnpm dlx skills@latest add https://github.com/railwayapp/railway-skills --agent 
 ```
 pnpm dlx skills add https://github.com/manaflow-ai/cmux --agent claude-code pi
 ```
+
+### ADHD
+
+Parallel divergent ideation — fans thoughts out under different cognitive frames, scores them, prunes the traps, deepens the survivors
+
+```
+pnpm dlx skills@latest add https://github.com/UditAkhourii/adhd --agent claude-code pi
+```
