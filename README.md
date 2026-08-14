@@ -93,12 +93,6 @@ pnpm dlx skills@latest add clerk/skills --agent claude-code pi
 Operate Railway infrastructure — projects, services, databases, deploys, domains, environments and variables, plus querying Railway's docs
 
 ```
-pnpm dlx skills@latest add https://github.com/railwayapp/railway-skills --agent claude-code pi
-```
-
-Or just the `use-railway` skill, without the rest of the repo:
-
-```
 pnpm dlx skills@latest add https://github.com/railwayapp/railway-skills --skill use-railway --agent claude-code pi
 ```
 
