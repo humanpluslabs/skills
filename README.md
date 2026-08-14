@@ -107,3 +107,19 @@ Parallel divergent ideation — fans thoughts out under different cognitive fram
 ```
 pnpm dlx skills@latest add https://github.com/UditAkhourii/adhd --agent claude-code pi
 ```
+
+### advise-project-approach
+
+Researches comparable projects, tradeoffs, costs and failure conditions before it gives build advice — so a recommendation rests on prior art rather than vibes
+
+```
+pnpm dlx skills@latest add https://github.com/AaravKashyap12/advise-project-approach --agent claude-code pi
+```
+
+### NeuroArxiv
+
+Checks real arXiv prior art before designing a new architecture — papers fetched over HTTP, read in isolation so no source anchors another, converged into one cited recommendation
+
+```
+pnpm dlx skills@latest add https://github.com/UditAkhourii/neuroarxiv --agent claude-code pi
+```
