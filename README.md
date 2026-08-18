@@ -1,8 +1,16 @@
 # Agent Skills
 
-A collection of agent skills that enhance the development workflow.
+Agent skills are reusable workflows defined in `SKILL.md` files that Claude Code
+loads to perform specific development tasks.
+
+This repository centralizes both our in-house workflows and curated third-party
+skills, giving projects a consistent place to discover and install the tools used
+across planning, implementation, and supporting development work.
 
 ## In-House
+
+Install `pnpm` first so that `pnpx` is available, then add the in-house skills to
+a project configured for Claude Code:
 
 ```bash
 pnpx skills@latest add humanpluslabs/skills --agent claude-code
