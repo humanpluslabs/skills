@@ -31,15 +31,15 @@ with `/grill-me` (see [Matt Pocock](#matt-pocock) below), the flow is:
 
 ### Utilities
 
-| Skill                 | What it does                                                                                                                                                                                                                              |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `commit`              | Creates a conventional commit message for staged changes.                                                                                                                                                                                 |
-| `create-asana-ticket` | Creates well-formed Asana tickets using a vertical-slice, outcome-focused template and a confirmation-first workflow.                                                                                                                     |
-| `explain`             | Read-only mode: answers questions about the project without changing anything.                                                                                                                                                            |
-| `greptile`            | Runs a Greptile CLI review on the current branch before it becomes a PR, briefing the reviewer with the branch's own plan/PRD/knowledge docs, then triages every finding against the code and reports a verdict before changing anything. |
-| `init-monorepo`       | Bootstraps a fresh TypeScript pnpm monorepo with the house defaults (Biome, cspell, lefthook, Turbo, CI, and more).                                                                                                                       |
-| `pr-review-comments`  | Works through a pasted CodeRabbit review on the current PR: verifies each finding, gates on a verdict table, implements, syncs the knowledge base, then resolves/replies on threads and commits + pushes.                                 |
-| `prime`               | Familiarises the agent with the project codebase at the start of a new conversation.                                                                                                                                                      |
+| Skill                 | What it does                                                                                                                                                                                              |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `commit`              | Creates a conventional commit message for staged changes.                                                                                                                                                 |
+| `create-asana-ticket` | Creates well-formed Asana tickets using a vertical-slice, outcome-focused template and a confirmation-first workflow.                                                                                     |
+| `explain`             | Read-only mode: answers questions about the project without changing anything.                                                                                                                            |
+| `init-monorepo`       | Bootstraps a fresh TypeScript pnpm monorepo with the house defaults (Biome, cspell, lefthook, Turbo, CI, and more).                                                                                       |
+| `pr-review-comments`  | Works through a pasted CodeRabbit review on the current PR: verifies each finding, gates on a verdict table, implements, syncs the knowledge base, then resolves/replies on threads and commits + pushes. |
+| `pre-pr-review`       | Runs a Greptile CLI review of the latest committed work against the base branch, briefing the review agent with the plan and PRD behind the work.                                                         |
+| `prime`               | Familiarises the agent with the project codebase at the start of a new conversation.                                                                                                                      |
 
 ## 3rd Party
 
