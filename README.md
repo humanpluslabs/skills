@@ -18,11 +18,11 @@ pnpx skills@latest add humanpluslabs/skills --agent claude-code
 
 ### Planning → implementation pipeline
 
-Four skills chain a design conversation all the way to committed code. Paired
-with `/grill-me` (see [Matt Pocock](#matt-pocock) below), the flow is:
+Four skills chain a problem all the way to committed code, starting from whatever
+states it — an Asana task, a GitHub issue, or a description typed into the prompt:
 
 ```
-/grill-me                         design + decisions (the interview)
+/start-planning-conversation      read the source + interview to agreement
       ↓
 /create-plans-from-conversation   capture + split into self-contained plans
       ↓  (one plan at a time)
@@ -31,11 +31,16 @@ with `/grill-me` (see [Matt Pocock](#matt-pocock) below), the flow is:
 /implement-prd                    next milestone → code, one per session
 ```
 
-| Skill                            | What it does                                                                                                                                                                                      |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `create-plans-from-conversation` | Turns the design decisions in a conversation into one or more self-contained plan files under `docs/plans/`, each shaped to feed `/create-prd-from-plan`. Produces plans only — no PRDs, no code. |
-| `create-prd-from-plan`           | Turns a plan into an agent-executable PRD (`prd.md`) plus a per-PRD `conventions.md`, breaking work into self-contained milestones a fresh session can implement. Documents only.                 |
-| `implement-prd`                  | Implements the next incomplete milestone from a PRD — one milestone per session, commit when green, no auto-push.                                                                                 |
+The opening interview is `/grill-me` (see [Matt Pocock](#matt-pocock) below),
+invoked by `start-planning-conversation` once it has read the source and scanned
+the repo.
+
+| Skill                            | What it does                                                                                                                                                                                                       |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `start-planning-conversation`    | Reads the problem source — an Asana task, a GitHub issue, or a description typed into the prompt — grounds it in the repo, then runs `/grill-me` to a shared understanding. Conversation only — no plans, no code. |
+| `create-plans-from-conversation` | Turns the design decisions in a conversation into one or more self-contained plan files under `docs/plans/`, each shaped to feed `/create-prd-from-plan`. Produces plans only — no PRDs, no code.                  |
+| `create-prd-from-plan`           | Turns a plan into an agent-executable PRD (`prd.md`) plus a per-PRD `conventions.md`, breaking work into self-contained milestones a fresh session can implement. Documents only.                                  |
+| `implement-prd`                  | Implements the next incomplete milestone from a PRD — one milestone per session, commit when green, no auto-push.                                                                                                  |
 
 ### Utilities
 
