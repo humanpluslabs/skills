@@ -46,6 +46,7 @@ with `/grill-me` (see [Matt Pocock](#matt-pocock) below), the flow is:
 | `explain`             | Read-only mode: answers questions about the project without changing anything.                                                                                                                            |
 | `init-monorepo`       | Bootstraps a fresh TypeScript pnpm monorepo with the house defaults (Biome, cspell, lefthook, Turbo, CI, and more).                                                                                       |
 | `pr-review-comments`  | Works through a pasted CodeRabbit review on the current PR: verifies each finding, gates on a verdict table, implements, syncs the knowledge base, then resolves/replies on threads and commits + pushes. |
+| `pre-pr-review`       | Runs a Greptile CLI review of the latest committed work against the base branch, briefing the review agent with the plan and PRD behind the work.                                                         |
 | `prime`               | Familiarises the agent with the project codebase at the start of a new conversation.                                                                                                                      |
 
 ## 3rd Party
